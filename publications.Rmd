@@ -1,0 +1,38 @@
+---
+title: ""
+output: 
+  html_document: 
+    fig_height: 4
+    fig_width: 4
+---
+
+```{r, include=FALSE}
+library(scholar)
+library(dplyr)
+library(knitr)
+id <- "DmQLj7gAAAAJ" # my id.
+```
+
+<br><br>
+```{r, echo=FALSE}
+p <- get_profile(id)
+```
+
+Here I show my publication record and the number of citations per year. Mostly I wanted to use the awesome `scholar` R package to programmatically extract and analyze [Google Scholar](http://scholar.google.com) profiles. If you are interested on the `scholar` package you can get more information [here](https://github.com/jkeirstead/scholar).
+
+
+## Citations per year
+
+```{r, echo=FALSE, fig.align='center'}
+cit <- get_citation_history(id)
+cit$year <- factor(cit$year)
+ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count") 
+```
+
+## List of publications
+
+```{r, echo=FALSE}
+p <- get_publications(id)
+kable(p %>% filter(cites > 1 | year > 2014) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))) 
+```
+

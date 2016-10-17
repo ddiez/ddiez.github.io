@@ -1,0 +1,34 @@
+---
+title: ""
+output: 
+  html_document: 
+    fig_height: 4
+    fig_width: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+library(ggthemes)
+theme_set(theme_base(base_size = 12) + theme(plot.background = element_rect(color = NA)))
+library(igraph)
+library(ggraph)
+```
+<br><br>
+
+# Biography
+
+I am a researcher at the [Immunology Frontier Research Center](http://www.ifrec.osaka-u.ac.jp/en/) at [Osaka University](http://www.osaka-u.ac.jp/en/).
+
+I really have to work filling this site with amazing stuff. In the meantime here you have a random Barabasi graph.
+
+
+```{r, fig.align='center'}
+set.seed(123)
+g <- barabasi.game(100, power = 1.3)
+ggraph(g, layout = "dh") + geom_edge_link(edge_width = 1) + geom_node_point(size = 5) + geom_node_point(size = 3, color = "grey") + geom_node_point(size = 1, color = "red") + theme_void() + theme(aspect.ratio = 1)
+
+# d <- reshape2::melt(table(degree(g)), varnames = "degree")
+# ggplot(d, aes(x = degree, y = value)) + geom_point() + geom_smooth(method = "lm", se = FALSE) + theme(aspect.ratio = 1) + scale_x_log10() + scale_y_log10() + labs(y = "count")
+```
+
