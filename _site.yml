@@ -7,5 +7,9 @@ navbar:
       href: index.html
     - text: "Publications"
       href: publications.html
+    - text: "Packages"
+      menu:
+        - text: "q3tools"
+          href: q3tools/index.html
     - text: "About"
       href: about.html
