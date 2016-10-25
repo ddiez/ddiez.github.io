@@ -7,9 +7,9 @@ output:
 ---
 
 ```{r, include=FALSE}
+library(DT)
 library(scholar)
 library(dplyr)
-library(knitr)
 id <- "DmQLj7gAAAAJ" # my id.
 ```
 
@@ -33,6 +33,7 @@ ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "
 
 ```{r, echo=FALSE}
 p <- get_publications(id)
-kable(p %>% filter(cites > 1 | year > 2014) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))) 
+pt <- p %>% filter(cites > 1 | year > 2014) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))
+datatable(pt)
 ```
 
