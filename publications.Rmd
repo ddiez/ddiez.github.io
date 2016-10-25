@@ -34,6 +34,6 @@ ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "
 ```{r, echo=FALSE}
 p <- get_publications(id)
 pt <- p %>% filter(cites > 1 | year > 2014) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))
-datatable(pt)
+datatable(pt, rownames = FALSE)
 ```
 
