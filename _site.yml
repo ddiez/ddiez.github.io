@@ -4,12 +4,19 @@ navbar:
   title: "DIEGO DIEZ"
   left:
     - text: "Home"
+      icon: fa-home
       href: index.html
     - text: "Publications"
+      icon: fa-book
       href: publications.html
     - text: "Packages"
+      icon: fa-cog
       menu:
         - text: "q3tools"
           href: q3tools/index.html
     - text: "About"
+      icon: fa-info
       href: about.html
+  right:
+    - icon: fa-github
+      href: https://github.com/ddiez
