@@ -18,5 +18,5 @@ navbar:
       icon: fa-info
       href: about.html
   right:
-    - icon: fa-github
+    - icon: fa-github fa-lg
       href: https://github.com/ddiez
