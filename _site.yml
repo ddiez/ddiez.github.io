@@ -14,7 +14,7 @@ navbar:
       menu:
         - text: "q3tools"
           href: q3tools/index.html
-        - text: "motifTools"
+        - text: "motiftools"
           href: motiftools/index.html
     - text: "About"
       icon: fa-info
