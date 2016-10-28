@@ -10,6 +10,8 @@ output:
 library(DT)
 library(scholar)
 library(dplyr)
+library(ggplot2)
+library(plotly)
 id <- "DmQLj7gAAAAJ" # my id.
 ```
 
@@ -26,7 +28,10 @@ Here I show my publication record and the number of citations per year. Mostly I
 ```{r, echo=FALSE, fig.align='center'}
 cit <- get_citation_history(id)
 cit$year <- factor(cit$year)
-ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count") 
+g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count")
+p <- ggplotly(g)
+p$x$config$displayModeBar <- 0
+p
 ```
 
 ## List of publications
