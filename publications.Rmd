@@ -25,7 +25,7 @@ Here I show my publication record and the number of citations per year. Mostly I
 
 ## Citations per year
 
-```{r, echo=FALSE, fig.align='center'}
+```{r citations, echo=FALSE, fig.align='center'}
 cit <- get_citation_history(id)
 cit$year <- factor(cit$year)
 g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count")
@@ -36,7 +36,7 @@ p
 
 ## List of publications
 
-```{r, echo=FALSE}
+```{r publications, echo=FALSE}
 p <- get_publications(id)
 pt <- p %>% filter(cites > 1 | year > 2014) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))
 datatable(pt, rownames = FALSE)
