@@ -238,13 +238,11 @@ $(document).ready(function () {
 </div>
 
 
-<p><br><br></p>
-<div id="biography" class="section level1">
-<h1>Biography</h1>
-<p>I am a researcher at the <a href="http://www.ifrec.osaka-u.ac.jp/en/">Immunology Frontier Research Center</a> at <a href="http://www.osaka-u.ac.jp/en/">Osaka University</a>.</p>
-<p>I really have to work filling this site with amazing stuff. In the meantime here you have a random Barabasi graph.</p>
-<p><img src="index_files/figure-html/hypnotize-1.png" width="384" style="display: block; margin: auto;" /></p>
-</div>
+<center>
+<img src="img/Me.jpg" alt="" style="width: 75%;"/>
+</center>
+<p><br></p>
+<p>I am a computational biologist and co-leader of the <a href="http://qimm.ifrec.osaka-u.ac.jp/en/index.html">Quantitative Immunology Research Unit</a> at the <a href="http://www.ifrec.osaka-u.ac.jp/en/">Immunology Frontier Research Center</a>, <a href="http://www.osaka-u.ac.jp/en/">Osaka University</a>. My interests include systems immunology, and gene regulatory networks. In this site I will show some of my past and current projects.</p>
 
 
 
@@ -254,8 +252,11 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
 
 

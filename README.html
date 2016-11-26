@@ -237,7 +237,7 @@ $(document).ready(function () {
 </div>
 
 
-<p><a href="http://ddiez.github.io/index.html">ddiez.github.io</a></p>
+<p>This project contains the files used to generate my home page: <a href="http://ddiez.github.io/index.html">ddiez.github.io</a>. The site has been generated using the <a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html">Web Site authoring tools</a> in <a href="https://www.rstudio.com">RStudio</a>.</p>
 
 
 
@@ -247,8 +247,11 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
 
 
