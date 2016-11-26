@@ -1,3 +1,1 @@
-
-
-<a href="http://ddiez.github.io/index.html">ddiez.github.io</a>
+This project contains the files used to generate my home page: [ddiez.github.io](http://ddiez.github.io/index.html). The site has been generated using the [Web Site authoring tools](http://rmarkdown.rstudio.com/rmarkdown_websites.html) in [RStudio](https://www.rstudio.com).
