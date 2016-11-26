@@ -15,15 +15,27 @@ library(plotly)
 id <- "DmQLj7gAAAAJ" # my id.
 ```
 
-<br><br>
+<br>
 ```{r, echo=FALSE}
 p <- get_profile(id)
 ```
 
-Here I show my publication record and the number of citations per year. Mostly I wanted to use the awesome `scholar` R package to programmatically extract and analyze [Google Scholar](http://scholar.google.com) profiles. If you are interested on the `scholar` package you can get more information [here](https://github.com/jkeirstead/scholar).
+## List of publications
 
+You can find here a list of my publications, sort them by column and filter them using the search box. Compared to the information shown in [my Google Scholar site](https://scholar.google.co.jp/citations?user=DmQLj7gAAAAJ&hl=en), only articles with more than one citation or published in the last two years are included.
+
+```{r publications, echo=FALSE}
+p <- get_publications(id)
+current_year <- as.numeric(format(Sys.time(), "%Y"))
+valid_year <- current_year - 2
+pt <- p %>% filter(cites > 1 | year > valid_year) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))
+datatable(pt, rownames = FALSE)
+```
+<br>
 
 ## Citations per year
+
+This plot shows my citation history per year.
 
 ```{r citations, echo=FALSE, fig.align='center'}
 cit <- get_citation_history(id)
@@ -34,11 +46,8 @@ p$x$config$displayModeBar <- 0
 p
 ```
 
-## List of publications
+<br>
 
-```{r publications, echo=FALSE}
-p <- get_publications(id)
-pt <- p %>% filter(cites > 1 | year > 2014) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))
-datatable(pt, rownames = FALSE)
-```
+## Acknowledment
 
+The information shown here is generated using the <a href="https://github.com/jkeirstead/scholar" target="_blank">scholar</a> R package to programmatically extract and analyze [Google Scholar](http://scholar.google.com) profiles. The interactive plot was generated using the [plotly](https://cran.r-project.org/package=plotly) R package.
