@@ -3,9 +3,6 @@ output_dir: "."
 navbar:
   title: "DIEGO DIEZ"
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
     - text: "Publications"
       icon: fa-book
       href: publications.html
