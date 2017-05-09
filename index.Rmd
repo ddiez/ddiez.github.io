@@ -8,17 +8,6 @@ header-includes:
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 ---
 
-
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library(ggplot2)
-library(ggthemes)
-theme_set(theme_base(base_size = 12) + theme(plot.background = element_rect(color = NA)))
-library(igraph)
-library(ggraph)
-```
-
 <center><img src="img/Me.jpg" alt="" style="width: 75%;"/></center>
 <br>
 
