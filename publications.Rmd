@@ -39,7 +39,7 @@ datatable(pt, rownames = FALSE)
 
 This plot shows my citation history per year.
 
-```{r citations, echo=FALSE, fig.align='center'}
+```{r citations, echo=FALSE, fig.align='center', fig.height=5, fig.width=5}
 cit <- get_citation_history(id)
 cit$year <- factor(cit$year)
 g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count")
