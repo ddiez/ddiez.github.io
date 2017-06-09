@@ -2,8 +2,8 @@
 title: ""
 output: 
   html_document: 
-    fig_height: 4
-    fig_width: 4
+    fig_height: 5
+    fig_width: 5
 ---
 
 ```{r, include=FALSE}
@@ -39,7 +39,7 @@ datatable(pt, rownames = FALSE)
 
 This plot shows my citation history per year.
 
-```{r citations, echo=FALSE, fig.align='center', fig.height=5, fig.width=5}
+```{r citations, echo=FALSE}
 cit <- get_citation_history(id)
 cit$year <- factor(cit$year)
 g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count")
