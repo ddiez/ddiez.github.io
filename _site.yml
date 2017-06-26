@@ -25,3 +25,4 @@ output:
   html_document:
     theme: yeti
     highlight: textmate
+    css: style.css
