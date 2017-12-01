@@ -43,7 +43,7 @@ This plot shows my citation history per year.
 cit <- get_citation_history(id)
 cit$year <- factor(cit$year)
 g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count")
-p <- ggplotly(g)
+p <- suppressMessages(ggplotly(g))
 p$x$config$displayModeBar <- 0
 p
 ```
