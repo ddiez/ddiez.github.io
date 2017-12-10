@@ -15,6 +15,11 @@ navbar:
           href: motiftools/index.html
         - text: "ngstools"
           href: ngstools/index.html
+    - text: "Teaching"
+      icon: fa-graduation-cap
+      menu:
+        - text: "Nagoya Course 2017"
+          href: nagoya_course_2017_book/index.html
     - text: "About"
       icon: fa-info
       href: about.html
