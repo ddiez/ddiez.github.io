@@ -4,8 +4,12 @@ output:
   html_document
 ---
 
+Here I put information about some of my teaching activities. Slides, manuals and code used for some of the courses is available.
+
 # Nagoya 2017: Introduction to Bioinformatics
 
+This course covers general topics in Bioinformatics at an introductory level. The emphasis is in sequence analysis and omics technologies.
+
 * Slides
-* [Book](https://ddiez.github.io/nagoya_course_2017_book/index.html)
+* <a href="https://ddiez.github.io/nagoya_course_2017_book/index.html" target="_blank">Book</a>
 * Code
