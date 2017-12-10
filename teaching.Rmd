@@ -1,0 +1,11 @@
+---
+title: "Teaching"
+output: 
+  html_document
+---
+
+# Nagoya 2017: Introduction to Bioinformatics
+
+* Slides
+* [Book](https://ddiez.github.io/nagoya_course_2017_book/index.html)
+* Code
