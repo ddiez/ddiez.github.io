@@ -10,6 +10,6 @@ Here I put information about some of my teaching activities. Slides, manuals and
 
 This course covers general topics in Bioinformatics at an introductory level. The emphasis is in sequence analysis and omics technologies.
 
-* Slides
+* <a href="https://www.dropbox.com/sh/thrnvoibfzo6eai/AABm7QkWeKx4J9usbClI9oQQa?dl=0" target="_blank">Slides</a>
 * <a href="https://ddiez.github.io/nagoya_course_2017_book/index.html" target="_blank">Book</a>
 * Code
