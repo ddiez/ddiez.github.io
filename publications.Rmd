@@ -1,5 +1,6 @@
 ---
 title: ""
+pagetitle: "Publications"
 output: 
   html_document: 
     fig_height: 5
