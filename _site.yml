@@ -6,7 +6,7 @@ navbar:
     - text: "Publications"
       icon: fa-book
       href: publications.html
-    - text: "Packages"
+    - text: "Software"
       icon: fa-cog
       menu:
         - text: "q3tools"
