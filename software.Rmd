@@ -3,3 +3,20 @@ title: "Software"
 output: html_document
 ---
 
+# Research
+
+## Bioconductor packages
+
+### Codelink
+
+[codelink](http://bioconductor.org/packages/codelink/)
+
+[annotation packages](http://bioconductor.org/packages/release/BiocViews.html#___CodelinkChip)
+
+### Transcriptional regulatory modules
+
+[rTRM](http://bioconductor.org/packages/rTRM/)
+
+[rTRMui](http://bioconductor.org/packages/rTRMui/)
+
+## Other
