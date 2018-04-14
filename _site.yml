@@ -8,13 +8,7 @@ navbar:
       href: publications.html
     - text: "Software"
       icon: fa-cog
-      menu:
-        - text: "q3tools"
-          href: q3tools/index.html
-        - text: "motiftools"
-          href: motiftools/index.html
-        - text: "ngstools"
-          href: ngstools/index.html
+      href: software.html
     - text: "Teaching"
       icon: fa-graduation-cap
       href: teaching.html
