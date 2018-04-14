@@ -5,6 +5,8 @@ output: html_document
 
 # Research
 
+This section includes software produced as a result of my research activities.
+
 ## Bioconductor packages
 
 ### Codelink
@@ -20,3 +22,11 @@ output: html_document
 [rTRMui](http://bioconductor.org/packages/rTRMui/)
 
 ## Other
+
+# Fun
+
+This include software created without a research motivation. Mostly done for fun or as a learning exercise.
+
+### Maze
+
+### Chaos
