@@ -25,7 +25,7 @@ This section includes software produced as a result of my research activities.
 
 # Fun
 
-This include software created without a research motivation. Mostly done for fun or as a learning exercise.
+This section includes software created without a research motivation. Mostly done for fun or as a learning exercise.
 
 ### Maze
 
