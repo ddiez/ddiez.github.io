@@ -29,8 +29,12 @@ This section includes software created without a research motivation. Mostly don
 
 ### Maze
 
-An R package to creating and plotting mazes.
+An R package for computing and plotting mazes.
 
 [maze](https://ddiez.github.io/maze/)
 
 ### Chaos
+
+An R package for computing and plotting fractals.
+
+[chaos](https://ddiez.github.io/chaos/)
