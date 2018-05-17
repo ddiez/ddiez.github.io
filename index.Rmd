@@ -12,4 +12,4 @@ header-includes:
 <center><img src="img/Me.jpg" alt="" style="width: 75%;"/></center>
 <br>
 
-I am a computational biologist and co-leader of the [Quantitative Immunology Research Unit](http://qimm.ifrec.osaka-u.ac.jp/en/index.html) at the [Immunology Frontier Research Center](http://www.ifrec.osaka-u.ac.jp/en/), [Osaka University](http://www.osaka-u.ac.jp/en/). My interests include systems immunology, and gene regulatory networks. In this site I will show some of my past and current projects.
+I am a computational biologist, member of the [Systems Immunology Laboratory](https://sysimm.org) and leader of the [Quantitative Immunology Research Unit](http://qimm.ifrec.osaka-u.ac.jp) at the [Immunology Frontier Research Center](http://www.ifrec.osaka-u.ac.jp/en/), [Osaka University](http://www.osaka-u.ac.jp/en/). My interests include systems immunology, and gene regulatory networks.
