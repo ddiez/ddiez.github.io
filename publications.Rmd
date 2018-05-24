@@ -12,6 +12,8 @@ library(tidyverse)
 library(DT)
 library(scholar)
 library(plotly)
+library(sparkline)
+library(formattable)
 library(ggthemes)
 theme_set(theme_base(base_size = 12) + theme(plot.background = element_rect(color = NA)))
 id <- "DmQLj7gAAAAJ" # my id.
@@ -28,10 +30,23 @@ You can find here a list of my publications, sort them by column and filter them
 
 ```{r publications, echo=FALSE}
 p <- get_publications(id)
+mincit <- 1
+
+# remove articles that have less than 2 citations unless they have been published in the last two years.
 current_year <- as.numeric(format(Sys.time(), "%Y"))
 valid_year <- current_year - 2
-pt <- p %>% filter(cites > 1 | year > valid_year) %>% select(year, cites, title, journal, author) %>% arrange(desc(year))
-datatable(pt, rownames = FALSE)
+p <- p %>% filter(cites > mincit | year > valid_year, !is.na(cid), !is.na(year))
+
+# get citations per article.
+citart <- lapply(p$pubid, get_article_cite_history, id = id) %>% bind_rows()
+citart <- citart %>% group_by(pubid) %>% summarize(trend = spk_chr(cumsum(cites), type = "bar"))
+p <- p %>% left_join(citart, by = "pubid") %>% replace_na(list(trend = ""))
+ 
+# print table.
+pt <- p %>% select(year, cites, title, journal, author, trend) %>% arrange(desc(year))
+#pt %>% formattable() %>% as.datatable(rownames = FALSE) %>% spk_add_deps()
+#pt %>% datatable(rownames = FALSE, escape = FALSE) %>% spk_add_deps()
+pt %>% formattable() %>% as.htmlwidget() %>% spk_add_deps()
 ```
 <br>
 
@@ -42,7 +57,7 @@ This plot shows my citation history per year.
 ```{r citations, echo=FALSE}
 cit <- get_citation_history(id)
 cit$year <- factor(cit$year)
-g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity") + labs(y = "count")
+g <- ggplot(cit, aes(x = year, y = cites)) + geom_bar(stat = "identity", fill = "royalblue3") + labs(y = "count")
 p <- suppressMessages(ggplotly(g))
 p$x$config$displayModeBar <- 0
 p
