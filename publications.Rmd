@@ -38,7 +38,7 @@ valid_year <- current_year - 2
 p <- p %>% filter(cites > mincit | year > valid_year, !is.na(cid), !is.na(year))
 
 # get citations per article.
-citart <- lapply(p$pubid, get_article_cite_history, id = id) %>% bind_rows()
+citart <- lapply(p$pubid, get_article_cite_history, id = id) %>% bind_rows() %>% complete(pubid, year, fill = list(cites = 0))
 citart <- citart %>% group_by(pubid) %>% summarize(trend = spk_chr(cumsum(cites), type = "bar"))
 p <- p %>% left_join(citart, by = "pubid") %>% replace_na(list(trend = ""))
  
