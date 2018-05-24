@@ -8,10 +8,9 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
 library(DT)
 library(scholar)
-library(dplyr)
-library(ggplot2)
 library(plotly)
 library(ggthemes)
 theme_set(theme_base(base_size = 12) + theme(plot.background = element_rect(color = NA)))
