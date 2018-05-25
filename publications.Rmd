@@ -21,14 +21,14 @@ id <- "DmQLj7gAAAAJ" # my id.
 
 <br>
 ```{r, echo=FALSE}
-p <- get_profile(id)
+#p <- get_profile(id)
 ```
 
 ## List of publications
 
 You can find here a list of my publications, sort them by column and filter them using the search box. Compared to the information shown in [my Google Scholar site](https://scholar.google.co.jp/citations?user=DmQLj7gAAAAJ&hl=en), only articles with more than one citation or published in the last two years are included.
 
-```{r publications, echo=FALSE}
+```{r get_pub_data, echo=FALSE}
 p <- get_publications(id)
 mincit <- 1
 
@@ -39,17 +39,20 @@ p <- p %>% filter(cites > mincit | year > valid_year, !is.na(cid), !is.na(year))
 
 # get citations per article.
 citart <- lapply(p$pubid, function(pubid) {
-  get_article_cite_history(id = id, pubid)
+  tmp <- get_article_cite_history(id = id, pubid)
   Sys.sleep(3)
+  tmp
 }) %>% bind_rows() %>% complete(pubid, year, fill = list(cites = 0))
 citart <- citart %>% group_by(pubid) %>% summarize(trend = spk_chr(cumsum(cites), type = "bar"))
 p <- p %>% left_join(citart, by = "pubid") %>% replace_na(list(trend = ""))
- 
+```
+
+```{r print_pub, echo=FALSE}
 # print table.
 pt <- p %>% select(year, cites, title, journal, author, trend) %>% arrange(desc(year))
 #pt %>% formattable() %>% as.datatable(rownames = FALSE) %>% spk_add_deps()
 #pt %>% datatable(rownames = FALSE, escape = FALSE) %>% spk_add_deps()
-pt %>% formattable() %>% as.htmlwidget() %>% spk_add_deps()
+#pt %>% formattable() %>% as.htmlwidget() %>% spk_add_deps()
 ```
 <br>
 
